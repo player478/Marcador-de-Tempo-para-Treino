@@ -24,14 +24,4 @@ Clique no link abaixo para acessar a versão online do GymApp no seu navegador:
 
 [https://seu-usuario.github.io/seu-repositorio/](https://seu-usuario.github.io/seu-repositorio/)
 
-*(Não se esqueça de substituir o link acima pelo link real do seu GitHub Pages)*
-
 ---
-
-## 👨‍💻 Como Rodar o Projeto Localmente
-
-Se você deseja inspecionar o código ou fazer modificações:
-
-1.  Clone este repositório para a sua máquina.
-2.  Abra a pasta do projeto no seu editor de código.
-3.  Abra o arquivo `index.html` no seu navegador.
