@@ -1,0 +1,147 @@
+:root {
+    --primary-color: #4CAF50; /* Verde */
+    --secondary-color: #2196F3; /* Azul */
+    --background-color: #f0f2f5;
+    --text-color: #333;
+    --card-background: #fff;
+    --completed-color: #4CAF50;
+    --end-workout-color: #F44336;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    margin: 0;
+    padding: 20px;
+}
+
+#app {
+    max-width: 600px;
+    margin: auto;
+    text-align: center;
+}
+
+header {
+    margin-bottom: 20px;
+}
+
+h1 {
+    color: var(--primary-color);
+    font-weight: 700;
+}
+
+/* Cronômetro Geral */
+.timer-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    background-color: var(--card-background);
+    padding: 15px 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+}
+
+.timer-display {
+    font-size: 3rem;
+    font-weight: 600;
+    font-family: monospace;
+}
+
+.material-icons {
+    font-size: 2rem;
+    color: var(--secondary-color);
+}
+
+/* Lista de Exercícios */
+.exercise-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.exercise-item {
+    background-color: var(--card-background);
+    padding: 15px;
+    border-radius: 12px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    margin-bottom: 15px;
+    text-align: left;
+}
+
+.series-buttons {
+    display: flex;
+    gap: 8px;
+    margin-top: 10px;
+}
+
+.series-buttons button {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: 2px solid #ddd;
+    background-color: #eee;
+    color: #666;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+}
+
+.series-buttons button.completed {
+    background-color: var(--completed-color);
+    color: white;
+    border-color: var(--completed-color);
+}
+
+/* Cronômetro de Pausa */
+.rest-timer-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+    backdrop-filter: blur(5px);
+}
+
+.rest-timer-card {
+    background-color: var(--card-background);
+    padding: 40px;
+    border-radius: 15px;
+    text-align: center;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.rest-timer-display {
+    font-size: 5rem;
+    font-weight: 700;
+    color: var(--primary-color);
+    font-family: monospace;
+}
+
+/* Botões de Ação */
+button {
+    padding: 12px 24px;
+    border-radius: 8px;
+    border: none;
+    color: white;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.2s;
+    width: 100%;
+    margin-top: 20px;
+}
+
+.btn-start-workout {
+    background-color: var(--primary-color);
+}
+
+.btn-end-workout {
+    background-color: var(--end-workout-color);
+}

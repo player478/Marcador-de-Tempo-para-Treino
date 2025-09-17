@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GymApp Web</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/vue@3.2.47/dist/vue.global.js"></script>
+</head>
+<body>
+    <div id="app">
+        <header>
+            <h1>GymApp</h1>
+            <p>Seu treino na palma da sua mão (e na tela do navegador).</p>
+        </header>
+
+        <main>
+            <div class="timer-container">
+                <span class="material-icons">timer</span>
+                <span class="timer-display">{{ formatTime(elapsedTime) }}</span>
+            </div>
+
+            <ul class="exercise-list">
+                <li v-for="exercise in currentWorkout.exercises" :key="exercise.id" class="exercise-item">
+                    <h3>{{ exercise.name }}</h3>
+                    <p>{{ exercise.sets }} séries</p>
+                    <div class="series-buttons">
+                        <button v-for="set in exercise.sets" 
+                                :key="set" 
+                                :class="{ 'completed': exercise.seriesCompleted >= set }"
+                                @click="completeSet(exercise)">
+                            {{ set }}
+                        </button>
+                    </div>
+                </li>
+            </ul>
+
+            <div v-if="isRestTimerActive" class="rest-timer-overlay">
+                <div class="rest-timer-card">
+                    <h2>Pausa para descanso</h2>
+                    <span class="rest-timer-display">{{ restTimeRemaining }}</span>
+                    <button @click="stopRestTimer">Pular Pausa</button>
+                </div>
+            </div>
+            
+            <button @click="toggleWorkout" :class="{ 'btn-end-workout': isWorkoutRunning, 'btn-start-workout': !isWorkoutRunning }">
+                {{ isWorkoutRunning ? 'Finalizar Treino' : 'Iniciar Treino' }}
+            </button>
+
+        </main>
+    </div>
+
+    <script src="app.js"></script>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</body>
+</html>
