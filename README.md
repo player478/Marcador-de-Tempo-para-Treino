@@ -22,6 +22,6 @@ Este projeto foi construído do zero usando tecnologias web:
 
 Clique no link abaixo para acessar a versão online do GymApp no seu navegador:
 
-[https://github.com/player478/Marcador-de-Tempo-para-Treino]
+[https://player478.github.io/Marcador-de-Tempo-para-Treino/]
 
 ---
